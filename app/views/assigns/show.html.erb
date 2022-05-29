@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Block:</strong>
+  <%= @assign.block %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @assign.status %>
+</p>
+
+<%= link_to 'Edit', edit_assign_path(@assign) %> |
+<%= link_to 'Back', assigns_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: assign) do |form| %>
+  <% if assign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assign.errors.count, "error") %> prohibited this assign from being saved:</h2>
+
+      <ul>
+        <% assign.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :block %>
+    <%= form.datetime_select :block %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
