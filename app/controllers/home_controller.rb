@@ -5,7 +5,7 @@ class HomeController < ApplicationController
         
         @assigns = Assign.all.filter { |a| a.user_id == current_user.id }
 
-        @offers = Offer.all.filter { |a| a.assign_id in assigns }
+        @offers = Offer.all.filter { |o| o.assign_id in assigns }
 
     end
 
