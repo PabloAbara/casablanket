@@ -14,15 +14,11 @@
   <strong>Status:</strong>
   <%= @offer.status %>
 </p>
-
 <table>
   <thead>
     <tr>
-      <th>Offer</th>
       <th>Message</th>
-      <th>Status</th>
       <th>Response assign</th>
-      <th>Direction</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,11 +26,10 @@
   <tbody>
     <% @demands.each do |demand| %>
       <tr>
-        <td><%= demand.offer_id %></td>
+         
         <td><%= demand.message %></td>
-        <td><%= demand.status %></td>
-        <td><%= demand.response_assign_id %></td>
-        <td><%= demand.direction %></td>
+        
+        <td><%= Assign.find(demand.response_assign_id.to_i).block %></td>
         <td><%= link_to 'Show', demand %></td>
         <td><%= link_to 'Edit', edit_demand_path(demand) %></td>
         <td><%= link_to 'Destroy', demand, method: :delete, data: { confirm: 'Are you sure?' } %></td>

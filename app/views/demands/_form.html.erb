@@ -20,23 +20,32 @@
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
-
-
-  <div class="field">
-    <%= form.label :response_assign_id %>
-    <%= form.number_field :response_assign_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :direction %>
-    <%= form.number_field :direction %>
+    <%= form.label :response_assign_id %>    
+    <%= form.select :response_assign_id, @assign_options.pluck(:id)%>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<h1>Cheat Sheet de Mis horarios</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>HORARIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @assigns.each do |assign| %>
+      <tr>
+        <td><%= assign.id %></td>
+        <td><%= assign.block %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+

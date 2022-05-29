@@ -1,26 +1,106 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<title>The Chat Market</title>
+<body>
+    <section class="vh-60">
+        <div
+          class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+          <!-- Copyright -->
+          <div class="text-white mb-3 mb-md-0">
+            <h1>The Chat Market</h1>
+          </div>
+          <!-- Copyright -->
+      
+          <!-- Right -->
+          <div>
+            <a href="#!" class="text-white me-4">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#!" class="text-white">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <!-- Right -->
+        </div>
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="https://fin.fintual.com/packs/media/assets/n-f1a1fc3a53cb33fd1a925092fe773f20.gif"
+                class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+      
+                <div class="divider d-flex align-items-center my-4">
+                  <p class="text-center fw-bold mx-3 mb-0">Ingresa manual</p>
+                </div>
+                
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                  <label class="form-label" for="form3Example3"><%= f.label :email %><br /></label>
+                </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+      
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                  <%= f.password_field :password, autocomplete: "current-password" %>
+                  <label class="form-label" for="form3Example4"><%= f.label :password %><br /></label>
+                </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+                <% if devise_mapping.rememberable? %>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+                <% end %>
+              
+                <div class="text-center text-lg-start mt-4 pt-2 actions">
+                    <button type="button" class="btn btn-primary btn-lg"
+                        style="padding-left: 2.5rem; padding-right: 2.5rem;"><%= f.submit "Log in" %></button>
+                </div>
 
-<%= render "devise/shared/links" %>
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <p class="small fw-bold mt-2 pt-1 mb-0">No tienes cuenta? <a href="#!"
+                        class="link-danger">Registrate</a></p>
+                  </div>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+          <!-- Copyright -->
+          <div class="text-white mb-3 mb-md-0">
+            Copyright © 2020. All rights reserved.
+          </div>
+          <!-- Copyright -->
+      
+          <!-- Right -->
+          <div>
+            <a href="#!" class="text-white me-4">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#!" class="text-white">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <!-- Right -->
+          <%= render "devise/shared/links" %>
+        </div>
+      </section>
+</body>
+</html>

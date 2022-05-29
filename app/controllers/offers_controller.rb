@@ -9,7 +9,9 @@ class OffersController < ApplicationController
 
   # GET /offers/1 or /offers/1.json
   def show
-    @demands = Demand.all.filter { |a| a.offer_id == :offer }
+    if params[:id] != ""
+      @demands = Demand.all.select { |a| a.offer_id == params[:id].to_i}
+    end
   end
 
   # GET /offers/new

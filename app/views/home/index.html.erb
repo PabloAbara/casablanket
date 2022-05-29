@@ -29,7 +29,6 @@
     <tr>
       <th>Horario</th>
       <th>Mensaje</th>
-      <th>Estado</th>
       <th colspan="3"></th>
       <th colspan="3"></th>
     </tr>
@@ -40,7 +39,6 @@
       <tr>
         <td><%= offer.assign_id %></td>
         <td><%= offer.message %></td>
-        <td><%= offer.status %></td>
         <td><%= link_to 'VER', offer_path(offer.id) %></td>
       </tr>
     <% end %>

@@ -14,6 +14,7 @@ class DemandsController < ApplicationController
   def new
     @offer = params[:offer_id]
     @assign_options = Assign.all.filter { |a| a.user_id == current_user.id }
+    @assigns = Assign.all.filter { |a| a.user_id == current_user.id }
 
     @demand = Demand.new
   end
