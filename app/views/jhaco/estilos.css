@@ -22,3 +22,16 @@ height: 100%;
 .fa-solid.fa-circle.taken{
     color: rgb(59, 183, 43);
 }
+
+.tus-horarios{
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.lista{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
