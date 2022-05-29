@@ -16,7 +16,7 @@
       <% @demands.each do |demand| %>
         <td><%= demand.message %></td>  
         <td><%= Assign.find(demand.response_assign_id.to_i).block %></td>
-        <td><td><button type="button" class="btn btn-success"><%= link_to 'ACEPTAR', demand, method: "Patch" %><i class="fa-solid fa-eye"></i></button></td>
+        <td><td><button type="button" class="btn btn-success"><%= link_to 'ACEPTAR', demand %><i class="fa-solid fa-eye"></i></button></td>
         <td><td><button type="button" class="btn btn-danger"><%= link_to 'RECHAZAR', demand, method:"Delete" %><i class="fa-solid fa-eye"></i></button></td>      
       <% end %>
       </tr>

@@ -8,6 +8,16 @@ class DemandsController < ApplicationController
 
   # GET /demands/1 or /demands/1.json
   def show
+    @demanda_aceptada = Demand.find(params[:id])
+    origin_assign = Assign.find(Offer.find(@demanda_aceptada.offer_id).assign_id)
+    dest_assign = Assign.find(@demanda_aceptada.response_assign_id)
+    id_origin = Assign.find(origin_assign.id).user_id
+    id_dest = Assign.find(dest_assign.id).user_id
+    origin_assign.user_id = id_dest
+    origin_assign.save
+    dest_assign.user_id = id_origin
+    dest_assign.save
+    
   end
 
   # GET /demands/new
@@ -40,7 +50,7 @@ class DemandsController < ApplicationController
 
   # PATCH/PUT /demands/1 or /demands/1.json
   def update
-    puts "HOLA MUNDO"
+    
     respond_to do |format|
       if @demand.update(demand_params)
         format.html { redirect_to demand_url(@demand), notice: "Demand was successfully updated." }
