@@ -1,29 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="text-black mb-3 mb-md-0 p-2 bd-highlight">
+  <h1>MERCADO</h1>
+</div>
 
-<h1>Offers</h1>
 
-<table>
+<table class="table">
   <thead>
-    <tr>
-      <th>Assign</th>
-      <th>Message</th>
-      <th>Status</th>
+    <tr class="table-info">
+      <th scope="col">Usuario</th>
+      <th scope="col">Día / Fecha</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @offers.each do |offer| %>
+      <% @offers.each do |offer| %>
       <tr>
         <td><%= offer.assign_id %></td>
         <td><%= offer.message %></td>
         <td><%= offer.status %></td>
-        <td><%= link_to 'ME INTERESA!', new_demand_path(offer_id: offer.id) %></td>
+        <td scope="row"><button type="button" class="btn btn-warning"><%= link_to 'ME INTERESA!', new_demand_path(offer_id: offer.id) %></button></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Offer', new_offer_path %>

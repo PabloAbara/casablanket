@@ -18,7 +18,6 @@ class OffersController < ApplicationController
   def new
     @assign = params[:assign_id]
     @offer = Offer.new
-    
   end
 
   # GET /offers/1/edit
@@ -31,7 +30,7 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.save
-        format.html { redirect_to offer_url(@offer), notice: "Offer was successfully created." }
+        format.html { redirect_to "/", notice: "Offer was successfully created." }
         format.json { render :show, status: :created, location: @offer }
       else
         format.html { render :new, status: :unprocessable_entity }

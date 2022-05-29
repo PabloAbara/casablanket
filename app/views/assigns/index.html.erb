@@ -15,7 +15,6 @@
     <% @assigns.each do |assign| %>
       <tr>
         <td><%= assign.block %></td>
-        <td><%= assign.status %></td>
         <td><%= link_to 'Show', assign %></td>
         <td><%= link_to 'Add Offer',  new_offer_path(assign_id: assign.id) %></td>
       </tr>
