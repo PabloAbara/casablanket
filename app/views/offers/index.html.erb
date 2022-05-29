@@ -18,9 +18,7 @@
         <td><%= offer.assign_id %></td>
         <td><%= offer.message %></td>
         <td><%= offer.status %></td>
-        <td><%= link_to 'Show', offer %></td>
-        <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
-        <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'ME INTERESA!', new_demand_path(offer_id: offer.id) %></td>
       </tr>
     <% end %>
   </tbody>

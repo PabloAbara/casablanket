@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer_id: 1
+  message: MyString
+  status: MyString
+  response_assign_id: 1
+  direction: 1
+
+two:
+  offer_id: 1
+  message: MyString
+  status: MyString
+  response_assign_id: 1
+  direction: 1

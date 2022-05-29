@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Offer:</strong>
+  <%= @demand.offer_id %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @demand.message %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @demand.status %>
+</p>
+
+<p>
+  <strong>Response assign:</strong>
+  <%= @demand.response_assign_id %>
+</p>
+
+<p>
+  <strong>Direction:</strong>
+  <%= @demand.direction %>
+</p>
+
+<%= link_to 'Edit', edit_demand_path(@demand) %> |
+<%= link_to 'Back', demands_path %>

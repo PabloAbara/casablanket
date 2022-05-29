@@ -1,19 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Assign:</strong>
-  <%= @offer.assign_id %>
-</p>
-
-<p>
-  <strong>Message:</strong>
-  <%= @offer.message %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @offer.status %>
-</p>
+<h1>Demands</h1>
 
 <table>
   <thead>
@@ -43,5 +30,6 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_offer_path(@offer) %> |
-<%= link_to 'Back', offers_path %>
+<br>
+
+<%= link_to 'New Demand', new_demand_path %>

@@ -1,0 +1,42 @@
+<%= form_with(model: demand) do |form| %>
+  <% if demand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(demand.errors.count, "error") %> prohibited this demand from being saved:</h2>
+
+      <ul>
+        <% demand.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="hidden-field">
+    <%= form.hidden_field  :offer_id, value: @offer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_field :message %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+
+
+  <div class="field">
+    <%= form.label :response_assign_id %>
+    <%= form.number_field :response_assign_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direction %>
+    <%= form.number_field :direction %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

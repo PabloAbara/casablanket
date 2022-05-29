@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :demands
   resources :offers
   resources :assigns
   devise_for :users
