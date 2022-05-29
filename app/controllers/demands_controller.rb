@@ -40,6 +40,7 @@ class DemandsController < ApplicationController
 
   # PATCH/PUT /demands/1 or /demands/1.json
   def update
+    puts "HOLA MUNDO"
     respond_to do |format|
       if @demand.update(demand_params)
         format.html { redirect_to demand_url(@demand), notice: "Demand was successfully updated." }
@@ -56,7 +57,7 @@ class DemandsController < ApplicationController
     @demand.destroy
 
     respond_to do |format|
-      format.html { redirect_to demands_url, notice: "Demand was successfully destroyed." }
+      format.html { redirect_to demands_url, notice: "Se ha rechazado la propuesta de cambio" }
       format.json { head :no_content }
     end
   end

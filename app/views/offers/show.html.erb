@@ -1,42 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="text-black mb-3 mb-md-0 p-2 bd-highlight">
+  <h1>Propuestas para el horario:  <%=Assign.find(@offer.assign_id).block %></h1>
+</div>
 
-<p>
-  <strong>Assign:</strong>
-  <%= @offer.assign_id %>
-</p>
-
-<p>
-  <strong>Message:</strong>
-  <%= @offer.message %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @offer.status %>
-</p>
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Message</th>
-      <th>Response assign</th>
-      <th colspan="3"></th>
+      <th class="table-info">Mensaje Proponente</th>
+      <th class="table-info">Horario Propuesto</th>
+      <th class="table-info" colspan="3"></th>
+      <th class="table-info" colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @demands.each do |demand| %>
       <tr>
-         
-        <td><%= demand.message %></td>
-        
+      <% @demands.each do |demand| %>
+        <td><%= demand.message %></td>  
         <td><%= Assign.find(demand.response_assign_id.to_i).block %></td>
-        <td><%= link_to 'Show', demand %></td>
-        <td><%= link_to 'Edit', edit_demand_path(demand) %></td>
-        <td><%= link_to 'Destroy', demand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><td><button type="button" class="btn btn-success"><%= link_to 'ACEPTAR', demand, method: "Patch" %><i class="fa-solid fa-eye"></i></button></td>
+        <td><td><button type="button" class="btn btn-danger"><%= link_to 'RECHAZAR', demand, method:"Delete" %><i class="fa-solid fa-eye"></i></button></td>      
+      <% end %>
       </tr>
-    <% end %>
   </tbody>
 </table>
-
-<%= link_to 'Edit', edit_offer_path(@offer) %> |
-<%= link_to 'Back', offers_path %>

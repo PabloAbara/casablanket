@@ -58,7 +58,7 @@ class OffersController < ApplicationController
     @offer.destroy
 
     respond_to do |format|
-      format.html { redirect_to offers_url, notice: "Offer was successfully destroyed." }
+      format.html { redirect_to "/", notice: "Se ha eliminado la oferta." }
       format.json { head :no_content }
     end
   end

@@ -1,10 +1,11 @@
-<h1>Mis horarios!!</h1>
+<div class="text-black mb-3 mb-md-0 p-2 bd-highlight">
+  <h1>Mis Horarios</h1>
+</div>
 
-<table>
+<table class="table">
   <thead>
-    <tr>
-      <th>Día / Fecha</th>
-      <th>Status</th>
+    <tr class="table-info">
+      <th scope="col">Día / Fecha</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,34 +14,39 @@
     <% @assigns.each do |assign| %>
       <tr>
         <td><%= assign.block %></td>
-        <td><%= assign.status %></td>
-        <td><%= link_to 'Hacer una oferta!',  new_offer_path(assign_id: assign.id) %></td>
+        <td><button type="button" class="btn btn-warning"><%= link_to 'OFERTAR!',  new_offer_path(assign_id: assign.id) %></button></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
-<h1>Mis Ofertas</h1>
+<div class="text-black mb-3 mb-md-0 p-2 bd-highlight">
+  <h1>Mis Ofertas</h1>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Horario</th>
-      <th>Mensaje</th>
-      <th colspan="3"></th>
-      <th colspan="3"></th>
+      <th class="table-info">Horario</th>
+      <th class="table-info">Mensaje</th>
+      <th class="table-info" colspan="3"></th>
+      <th class="table-info" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @offers.each do |offer| %>
       <tr>
-        <td><%= offer.assign_id %></td>
+        <td><%= Assign.find(offer.assign_id).block %></td>
         <td><%= offer.message %></td>
-        <td><%= link_to 'VER', offer_path(offer.id) %></td>
+        <td><button type="button" class="btn btn-warning"><%= link_to 'VER', offer_path(offer.id) %><i class="fa-solid fa-eye"></i></button></td>
+        <td><button type="button" class="btn btn-danger"><%= link_to 'ELIMINAR', offer_path(offer.id), method: "delete" %><i class="fa-solid fa-trash-can"></i></button></td></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+
+<%= @offers %>
