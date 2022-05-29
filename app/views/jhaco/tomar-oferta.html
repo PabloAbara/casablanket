@@ -11,34 +11,29 @@
 </head>
 <body>
 
-    <div
-    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-    <!-- Copyright -->
-        <div class="text-white mb-3 mb-md-0">
-        <h1>Haz tu oferta</h1>
-        </div>
-    </div>
+    <nav class="navbar navbar-dark bg-primary d-flex flex-row-reverse bd-highlight">
+        <button class="btn btn-danger" type="submit">Volver</button>                      
+        <div class="text-white mb-3 mb-md-0 p-2 bd-highlight">
+            <h1>Haz tu oferta</h1>
+        </div>            
+    </nav>
     <div>
         <div class="text-black mb-3 mb-md-0 p-2 bd-highlight">
             <div class="tus-horarios"><h1>Tus Horarios</h1></div>
         </div>
-    </div>
-    <div class="lista">
-          <label for="">Datalist</label>
-          <input type="text" list="items">
-          <datalist id="items">
-               <option value="1">
-                <table class="table table-success">            
-                    <tbody>
-                        <tr>                    
-                            <td class="table-success" scope="row">30/05/2022</td>                    
-                            <td class="table-success" scope="row">09:00</td>                                                
-                        </tr>
-                    </tbody>
-               </table></option>
-               <option value="2">Opción 2</option>
-               <option value="3">Opción 3</option>
-          </datalist>          
+    </div>     
+        <form action="">        
+            <div class="fields">
+            <input type="text" list="items">
+                <datalist id="items">
+                    <option value="30/05/2022 09:00"></option>
+                    <option value="01/06/2022 10:00"></option>
+                    <option value="02/06/2022 11:00"></option>
+                </datalist>  
+                <textarea id="coment"></textarea>                  
+            </div>
+            <button type="button" class="btn btn-success">Enviar</button>
+        </form>
     </div>
     
 </body>
